@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game.CoreFiles
 {
-    public class MainCamera : MonoBehaviour
+    public class FollowCamera : MonoBehaviour
     {
         [SerializeField] GameObject watchGameObject;
 
