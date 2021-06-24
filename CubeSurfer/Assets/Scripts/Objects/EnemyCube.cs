@@ -1,3 +1,4 @@
+using Game.Controllers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,7 +19,8 @@ namespace Game.Objects
                     break;
                     
                     case "Player":
-                    Time.timeScale = 0;
+                    var player = target.collider.transform.parent.GetComponent<PlayerController>();
+                    player.IsDead = true;
                     break;
                 }
             }
