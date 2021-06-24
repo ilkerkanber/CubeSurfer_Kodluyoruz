@@ -18,7 +18,6 @@ namespace Game.Controllers {
 
         [field: SerializeField]
         public float HorizontalSpeed { get; private set; }
-
         public bool IsLeft { get; set; }
         public bool IsRight { get; set; }
 
@@ -31,7 +30,6 @@ namespace Game.Controllers {
         {
             _verticalMover.Run(VerticalSpeed);
 
-            Mathf.Clamp(transform.position.z, transform.position.z - 5, transform.position.z + 5);
             if (IsLeft)
             {
                 _horizontalMover.HorMove(HorizontalSpeed);
@@ -45,10 +43,10 @@ namespace Game.Controllers {
         }
         public void AddCube(GameObject spawnObject)
         {
-            Body.transform.position += Vector3.up;
-            Vector3 poz = Body.transform.position;
-            poz.y = poz.y - 1;
-            Instantiate(spawnObject, poz, transform.rotation, Pool.transform);
+                Body.transform.position += Vector3.up;
+                Vector3 poz = Body.transform.position;
+                poz.y = poz.y - 1;
+                Instantiate(spawnObject, poz, transform.rotation, Pool.transform);
         }
 
     }

@@ -14,7 +14,7 @@ namespace Game.Objects
                 if (target.collider.transform.parent.CompareTag("Cube"))
                 {
                     Debug.Log(target.collider.gameObject.name);
-                    Destroy(target.collider.gameObject);
+                    Destroy(target.collider.transform.parent.gameObject);
                 }
             }
         }
