@@ -11,10 +11,15 @@ namespace Game.Objects
         {
            if( Physics.Raycast(transform.position, -Vector3.right, out target, 0.1f))
             {
-                if (target.collider.transform.parent.CompareTag("Cube"))
+                switch(target.collider.transform.parent.tag)
                 {
-                    Debug.Log(target.collider.gameObject.name);
+                    case "Cube":
                     Destroy(target.collider.transform.parent.gameObject);
+                    break;
+                    
+                    case "Player":
+                    Time.timeScale = 0;
+                    break;
                 }
             }
         }
