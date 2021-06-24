@@ -9,9 +9,9 @@ namespace Game.Objects
         RaycastHit target;
         void Update()
         {
-           if( Physics.Raycast(transform.position, -Vector3.right, out target, 0.5f))
+           if( Physics.Raycast(transform.position, -Vector3.right, out target, 0.1f))
             {
-                if (target.collider.gameObject.tag == "Cube")
+                if (target.collider.transform.parent.CompareTag("Cube"))
                 {
                     Debug.Log(target.collider.gameObject.name);
                     Destroy(target.collider.gameObject);

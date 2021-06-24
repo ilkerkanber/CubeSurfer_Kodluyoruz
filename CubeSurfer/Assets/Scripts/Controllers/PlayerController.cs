@@ -9,7 +9,6 @@ namespace Game.Controllers {
         VerticalMover _verticalMover;
         HorizontalMover _horizontalMover;
         [SerializeField] GameObject Body,Pool;
-        [SerializeField] Transform SpawnPosition;
 
         [field: SerializeField]
         public float HorizontalBoundary { get; private set; }
